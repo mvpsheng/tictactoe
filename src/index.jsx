@@ -102,7 +102,7 @@ class Game extends React.Component {
       }
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="movebutton" onClick={() => this.jumpTo(move)}>{desc}</button>
           <span>{step.location ? `(${Math.floor(step.location / 3) + 1}, ${(step.location % 3) + 1})` : ''}</span>
         </li>
       )
@@ -127,8 +127,8 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
-          <button onClick={() => {
+          <div className="statusInfo">{status}</div>
+          <button className="movebutton" onClick={() => {
             this.setState({
               movesAscending: !this.state.movesAscending
             });
